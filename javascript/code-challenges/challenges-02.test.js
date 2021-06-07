@@ -26,8 +26,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
-  
-  const newArray = arr.map(val => ++val);
+    const newArray = arr.map(val => ++val);
   return newArray;
 };
 
@@ -39,14 +38,9 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  
-  const newArray = arr.map(val => val+"?");
+    const newArray = arr.map(val => val+"?");
   return newArray;
-  
-
-return newArr;
-
-
+  return newArr;
 };
 
 
@@ -63,7 +57,6 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
   const newArray = [];
-
   for (let index of arr) {
     newArray.push(Math.pow(2, index));
   }
@@ -109,7 +102,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  const newArray = arr.map(i => i.charCodeAt());
+  const newArray = arr.map(val => val.charCodeAt());
   return newArray;
 };
 
@@ -125,10 +118,10 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
-  const newArray = arr.map(i => {
-    if (i % 2 === 0) {
+  const newArray = arr.map(val => {
+    if (val % 2 === 0) {
       return 'even';
-    } else if (i % 2 > 0) {
+    } else if (val % 2 > 0) {
       return 'odd';
     } else {
       return 'N/A';
@@ -181,9 +174,8 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
-  const abilityArray = [];
-  arr.map(val => abilityArray.push(val.ability.name));
-  return abilityArray;
+  const newArr =   arr.map(val => val.ability.name);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -232,10 +224,7 @@ const snorlaxStats = {
 const extractStats = (arr) => {
   // Solution code here...
   const newArray = arr.map(val => {
-    let object = {};
-    object.name = val.stat.name;
-    object.total = val.baseStat + val.effort;
-    return object;
+    return {name:val.stat.name,total:val.baseStat + val.effort};
   });
 
   return newArray;
