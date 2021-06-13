@@ -24,6 +24,13 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
+  // const reversedNames = arr.map(str => {
+  //   let newArr = str.name.split("");
+  //   return newArr.reverse().join("");
+  // });
+  // return reversedNames;
+  
+
   const reversedNames = arr.map(str => {
     let newArr = str.name.split("");
     return newArr.reduce((accumulator, char) => char + accumulator, "");
