@@ -29,6 +29,7 @@ const getNames = (arr) => {
     return newArr.reduce((accumulator, char) => char + accumulator, "");
   });
   return reversedNames;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,6 +43,7 @@ const appendTheEnd = (str) => {
   // Solution code here...
   const newStr = str + ' The end.';
   return newStr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,6 +60,7 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
+
   // Solution code here...
  return arr.push(arr[0]);
 };
@@ -78,6 +81,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
+
   // Solution code here...
   return obj.yearBorn = year;
 };
