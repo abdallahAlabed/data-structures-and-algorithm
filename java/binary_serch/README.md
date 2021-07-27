@@ -6,7 +6,7 @@ Check the Resources section for details
 
 ## Whiteboard Process
 
-![Challenge1](img/binry-search.jpg)
+![Challenge1](../img/binry-search.jpg)
 
 
 # Domain:-
@@ -28,7 +28,7 @@ Check the Resources section for details
 -> [[].length/2] > val -> go right or [[].length/2] < val go left or [[].length/2] == val return index  ->iterate until finsh the array if there is no match return not found 
 
 
-# Code :-
+#   Code :-
 
     public static int binarySearch(int[] arr, int value) {
 

@@ -2,5 +2,5 @@
 Write a function called insertShiftArray which takes in an array and a value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index
 
 ## Whiteboard Process
-![Challenge1](img/code_chall.jpg)
+![Challenge1](../img/code_chall.jpg)
 
