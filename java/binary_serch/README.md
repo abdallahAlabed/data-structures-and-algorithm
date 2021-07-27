@@ -9,23 +9,26 @@ Check the Resources section for details
 ![Challenge1](img/binry-search.jpg)
 
 
-Domain:-
+# Domain:-
+
 Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the value of the search key, or -1 if the element is not in the array.
 NOTE: The search algorithm used in your function should be a binary search.
 Check the Resources section for details
 
 
 
-Algorthim :-
+# Algorthim :-
+
  binary search is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the arra
 
-Visual:-
+# Visual:-
+
 [1,2,3,4,5,6,7,8,9], (val)
 
 -> [[].length/2] > val -> go right or [[].length/2] < val go left or [[].length/2] == val return index  ->iterate until finsh the array if there is no match return not found 
 
 
-Code :-
+# Code :-
 
     public static int binarySearch(int[] arr, int value) {
 
