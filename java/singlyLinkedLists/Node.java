@@ -2,10 +2,10 @@ package singlyLinkedLists;
 
     class Node{    
         int data;    
-        Node next;    
+        Node next;  
             
         public Node(int data) {    
             this.data = data;    
-            this.next = null;    
+            this.next = null;
         }    
     }    

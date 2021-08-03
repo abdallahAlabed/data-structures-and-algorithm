@@ -20,4 +20,18 @@
 ## Whiteboard Process
 ![Challenge1](../img/list new.png)
 
+# Challenge Summary
+
+### Write a method for your LinkedList class that takes in an integer k and returns the value from the kth node from the end of the list.
+
+## Whiteboard Process
+![Challenge1](../img/ll_kth_from_end.jpg)
+
+## Approach & Efficiency
+### spaceO(1)
+### timeO(n)
+
+## Solution
+
+### 1 -> 2 -> 3 -> 4 -> 5 // findKFromEnd(0) -> 5 findKFromEnd(3) -> 2  findKFromEnd(5) -> throw new IndexOutOfBoundsException("list Out Of Bounds") 
 

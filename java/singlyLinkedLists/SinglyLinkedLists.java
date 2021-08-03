@@ -79,7 +79,7 @@ public class SinglyLinkedLists {
     // Appends a new node at the end. This method is defined inside LinkedList class
     // shown above
     public void append(int new_data) {
-         Node new_node = new Node(new_data);
+        Node new_node = new Node(new_data);
         if (head == null) {
             head = new Node(new_data);
             return;
@@ -101,7 +101,7 @@ public class SinglyLinkedLists {
                 // 1
                 // insertBefore(1,3);
                 // 3 -> 1
-                // head = newNode  // head = 3 
+                // head = newNode // head = 3
             } else {
                 Node current = head;
                 Node previousNode = current;
@@ -122,7 +122,7 @@ public class SinglyLinkedLists {
                     current = current.next;
                 }
             }
-        }else{
+        } else {
             System.out.println("the list is empty");
         }
     }
@@ -138,7 +138,7 @@ public class SinglyLinkedLists {
                 // newNode = 5 -> null
                 // tail.next = newNode
                 // 1-> 3 -> 4 - > 5 // tail = 4
-                // tail = newNode; tail = 5 
+                // tail = newNode; tail = 5
             } else if (head.next == null) {
                 if (val == head.data) {
                     Node newNode = new Node(newVal);
@@ -148,7 +148,7 @@ public class SinglyLinkedLists {
                     // insertAfter(1,2);
                     // newNode = 2 -> null
                     // head.next = newNode ; 1 -> 2 // tail = 1
-                    // tail = newNode; tail = 2 
+                    // tail = newNode; tail = 2
                 }
             } else {
                 Node current = head;
@@ -156,7 +156,7 @@ public class SinglyLinkedLists {
                 // 1-> 3 -> 4 // current = 1 // nextCurrent = 3
                 // insertAfter(1,2);
                 // newNode = 2 -> null
-                //newNode.next = nextCurrent // 1-> 3 -> 4  /2-> 3-> 4
+                // newNode.next = nextCurrent // 1-> 3 -> 4 /2-> 3-> 4
                 // current.next = newNode // 1-> 2-> 3-> 4
                 while (current != null) {
                     if (val == current.data) {
@@ -174,10 +174,45 @@ public class SinglyLinkedLists {
                     }
                 }
             }
-        }else{
+        } else {
             System.out.println("the list is empty");
         }
-        
+
+    }
+
+    // takes k index and returns the node data from index k from end of the list
+    public int findKFromEnd(int k) throws IndexOutOfBoundsException {
+        if (k < 0) {
+            throw new IndexOutOfBoundsException("k is not a positive integer");
+        } else if (head == null) {
+            throw new IndexOutOfBoundsException("list length is zero");
+        } else {
+            Node current = this.head;
+            while (current != null) {
+
+                Node kFinder = current;
+
+                for (int i = 0; i < k; i++) {
+
+                    if (kFinder.next == null && i != k - 1) {
+
+                        throw new IndexOutOfBoundsException("list Out Of Bounds");
+
+                    }
+
+                    kFinder = kFinder.next;
+                }
+
+                if (kFinder.next == null) {
+                    return current.data;
+                }
+
+                current = current.next;
+
+            }
+
+            throw new IndexOutOfBoundsException("list Out Of Bounds");
+        }
     }
 
     // public void insertAfter(Node prev_node, int new_data)
