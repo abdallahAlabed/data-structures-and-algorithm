@@ -215,6 +215,28 @@ public class SinglyLinkedLists {
         }
     }
 
+    public static SinglyLinkedLists zipLists(SinglyLinkedLists list, SinglyLinkedLists list0) {
+        Node current = list.head;
+        Node current0 = list0.head;
+        if (current == null && current == null) {
+            return null;
+        } else {            
+            SinglyLinkedLists newList = new SinglyLinkedLists();
+            while (current != null || current != null) {
+
+                if (current != null) {
+                    newList.addNode(current.data);
+                    current = current.next;
+                }
+
+                if (current0 != null) {
+                    newList.addNode(current0.data);
+                    current0 = current0.next;
+                }
+            }
+            return newList;
+        }
+    }
     // public void insertAfter(Node prev_node, int new_data)
     // {
     // /* 1. Check if the given Node is null */
