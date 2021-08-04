@@ -226,7 +226,7 @@ public class SinglyLinkedLists {
             return list;
         } else {            
             SinglyLinkedLists newList = new SinglyLinkedLists();
-            while (current != null || current != null) {
+            while (current != null || current0 != null) {
 
                 if (current != null) {
                     newList.addNode(current.data);
@@ -240,6 +240,20 @@ public class SinglyLinkedLists {
             }
             return newList;
         }
+    }
+    SinglyLinkedLists reverseList(SinglyLinkedLists list) {
+        
+        Node current = list.head;
+        Node previous = null;
+        Node nextElement=null;
+        while (current != null) {
+            nextElement = current.next;
+            current=previous.next;
+            previous = current;
+            current = nextElement;
+        }
+
+        return list;
     }
     // public void insertAfter(Node prev_node, int new_data)
     // {
