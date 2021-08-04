@@ -35,3 +35,20 @@
 
 ### 1 -> 2 -> 3 -> 4 -> 5 // findKFromEnd(0) -> 5 findKFromEnd(3) -> 2  findKFromEnd(5) -> throw new IndexOutOfBoundsException("list Out Of Bounds") 
 
+
+# Challenge Summary
+
+## Write a static method for  LinkedList class that takes in two LinkedLists and merges them together
+
+## Whiteboard Process
+
+![Challenge1](../img/linked-list-zip.png)
+
+## Approach & Efficiency
+
+### spaceO(1)
+### timeO(n)## Solution
+
+## Solution
+
+### list1  1 ->  3 -> 5 list2 2 -> 4 / zipLists(list1,list2) -> list3 1 -> 2 -> 3 -> 4 -> 5
