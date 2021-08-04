@@ -155,5 +155,169 @@ public class AppTest {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
+   
+    // challenge 08
+
+    @Test
+    public void testZipLists() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        SinglyLinkedLists list3 = new SinglyLinkedLists();
+        list2.insert(0);
+        list3.insert(1);
+        list2.insert(2);
+        list3.insert(3);
+        list2.insert(4);
+        list3.insert(5);
+        list2.insert(6);
+        list3.insert(7);
+        list2.insert(8);
+        list3.insert(9);
+
+        list.insert(0);
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.insert(5);
+        list.insert(6);
+        list.insert(7);
+        list.insert(8);
+        list.insert(9);
+
+        assertEquals("In right  order",list, SinglyLinkedLists.zipLists(list2, list3));
+
+        //test should now include various values from both lists
+        list=SinglyLinkedLists.zipLists(list2, list3);
+        assertTrue(list.includes(0));
+        assertTrue(list.includes(9));
+        assertTrue(list.includes(1));
+        assertTrue(list.includes(8));
+
+        list.display();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testZipListsFirstIsShorter() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        SinglyLinkedLists list3 = new SinglyLinkedLists();
+        list.insert(0);
+        list2.insert(1);
+        list.insert(2);
+        list2.insert(3);
+        list.insert(4);
+        list2.insert(5);
+        list2.insert(7);
+        list2.insert(9);
+
+        list3.insert(0);
+        list3.insert(1);
+        list3.insert(2);
+        list3.insert(3);
+        list3.insert(4);
+        list3.insert(5);
+        list3.insert(7);
+        list3.insert(9);
+        assertEquals("Should merge the tow lists and return the list3",list3, SinglyLinkedLists.zipLists(list, list2));
+
+        //test should now include various values from both lists
+        list3=SinglyLinkedLists.zipLists(list, list2);
+        assertTrue(list3.includes(0));
+        assertTrue(list3.includes(9));
+        assertTrue(list3.includes(1));
+        assertTrue(list3.includes(4));
+
+        list3.display();
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testZipListsSecndIsShorter() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        SinglyLinkedLists list3 = new SinglyLinkedLists();
+        list.insert(0);
+        list2.insert(1);
+        list.insert(2);
+        list2.insert(3);
+        list.insert(4);
+        list2.insert(5);
+        list2.insert(7);
+        list2.insert(9);
+
+        list3.insert(0);
+        list3.insert(1);
+        list3.insert(2);
+        list3.insert(3);
+        list3.insert(4);
+        list3.insert(5);
+        list3.insert(7);
+        list3.insert(9);
+        assertEquals("Should merge the tow lists and return the list3",list3, SinglyLinkedLists.zipLists(list2, list));
+
+        //test should now include various values from both lists
+        list3=SinglyLinkedLists.zipLists(list, list2);
+        assertTrue(list3.includes(0));
+        assertTrue(list3.includes(9));
+        assertTrue(list3.includes(1));
+        assertTrue(list3.includes(4));
+
+        list3.display();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testZipListsNullListFirst() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        SinglyLinkedLists list3 = new SinglyLinkedLists();
+        list.insert(1);
+        list.insert(3);
+        list.insert(5);
+        list.insert(7);
+        list.insert(9);
+
+        list3.insert(1);
+        list3.insert(3);
+        list3.insert(5);
+        list3.insert(7);
+        list3.insert(9);
+
+        assertEquals("if the first list is = null he will retune the secnd one", list3, SinglyLinkedLists.zipLists(list2, list));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testZipListsNullListSecond() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        SinglyLinkedLists list3 = new SinglyLinkedLists();
+        list.insert(1);
+        list.insert(3);
+        list.insert(5);
+        list.insert(7);
+        list.insert(9);
+
+        list3.insert(1);
+        list3.insert(3);
+        list3.insert(5);
+        list3.insert(7);
+        list3.insert(9);
+        assertEquals("if the secnd list is = null he will retune the first one", list3, SinglyLinkedLists.zipLists(list, list2));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void testZipListsTwoNullLists() {
+        SinglyLinkedLists list = new SinglyLinkedLists();
+        SinglyLinkedLists list2 = new SinglyLinkedLists();
+        assertNull("give back null value if both lists are empty",SinglyLinkedLists.zipLists(list, list2));
+    }
 
 }
