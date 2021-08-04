@@ -218,8 +218,12 @@ public class SinglyLinkedLists {
     public static SinglyLinkedLists zipLists(SinglyLinkedLists list, SinglyLinkedLists list0) {
         Node current = list.head;
         Node current0 = list0.head;
-        if (current == null && current == null) {
+        if (current == null && current0 == null) {
             return null;
+        }else if (current == null) {
+            return list0;
+        }else if (current0 == null) {
+            return list;
         } else {            
             SinglyLinkedLists newList = new SinglyLinkedLists();
             while (current != null || current != null) {
