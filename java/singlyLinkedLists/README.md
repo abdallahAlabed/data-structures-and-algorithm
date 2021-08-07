@@ -18,7 +18,7 @@
 ### * to string Returns: a string representing all the values in the Linked List, formatted as: "{ a } -> {
 
 ## Whiteboard Process
-![Challenge1](../img/list new.png)
+![Challenge1](../../img/list_new.png)
 
 # Challenge Summary
 
