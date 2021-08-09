@@ -7,7 +7,6 @@ public class Queue<T> {
     public boolean isEmpty() {
         return front == null;
     }
-
     public void enqueue(T value) {
         Node newNode = new Node(value);
         if (this.isEmpty()) {

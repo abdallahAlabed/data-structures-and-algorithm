@@ -1,7 +1,9 @@
 package queue;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class AppTest {
     @Test
@@ -138,5 +140,17 @@ class AppTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    // challenge 11
+    @Test public void testPseudoQueue() throws Exception {
+        PseudoQueue<Integer>  pseudoQueue = new PseudoQueue<>();
+        pseudoQueue.enqueue(1);
+        pseudoQueue.enqueue(2);
+        pseudoQueue.enqueue(3);
+        pseudoQueue.enqueue(4);
+        assertEquals("[4]->[3]->[2]->[1]->NULL",pseudoQueue.toString());
+        pseudoQueue.dequeue();
+        assertEquals("[4]->[3]->[2]->NULL",pseudoQueue.toString());
+
     }
 }
