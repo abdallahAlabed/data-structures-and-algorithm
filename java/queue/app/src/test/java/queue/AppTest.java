@@ -153,4 +153,28 @@ class AppTest {
         assertEquals("[4]->[3]->[2]->NULL",pseudoQueue.toString());
 
     }
+    // challenge 12
+
+    @Test
+    public void testDequeueBoth() throws Exception {
+        AnimalShelter animalShelter = new AnimalShelter();
+        Dogs dog1=new Dogs("Rocky");
+        Dogs dog2=new Dogs("MILO");
+        Cats cat1=new Cats("shemsh");
+        Cats cat2=new Cats("kitkit");
+
+        animalShelter.enqueue(cat1);
+        animalShelter.enqueue(cat2);
+        animalShelter.enqueue(dog1);
+        animalShelter.enqueue(dog2);
+        animalShelter.dequeue("dog");
+        animalShelter.dequeue("cat");
+        assertEquals("Dogs{name='MILO'}",animalShelter.dequeue("dog").toString());
+        assertEquals("Cats{name='kitkit'}",animalShelter.dequeue("cat").toString());
+    }
+    @Test
+    public void testDequeueNull() throws Exception {
+        AnimalShelter animalShelter=new AnimalShelter();
+        assertEquals("Sorry We cant have a horse in the Shelter ",animalShelter.dequeue("horse"));
+    }
 }
