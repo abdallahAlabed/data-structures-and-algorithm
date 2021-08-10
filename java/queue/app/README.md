@@ -3,6 +3,7 @@
 ## Whiteboard Process
 ![codeChallenge11](./src/main/resources/IMG_20210809_025637_edit_197615624818283.jpg)
 
+
 ## Approach & Efficiency
 The Big O efficiency for this method is O(n) time and space.
 
@@ -18,3 +19,16 @@ pseudoQueue.enqueue(4);
 "[4]->[3]->[2]->[1]->NULL"
 pseudoQueue.dequeue();
 "[4]->[3]->[2]->NULL"
+
+# Animal Shelter
+## Challenge Summary
+
+### Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach. The shelter should have an enqueue(animal) method that will add either a cat or dog object to the shelter.
+
+## Whiteboard Process
+![codeChallenge12]()
+
+## Approach & Efficiency
+time o(1)
+space o(1)
+
