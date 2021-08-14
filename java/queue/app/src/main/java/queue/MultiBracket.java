@@ -2,25 +2,23 @@ package queue;
 
 public class MultiBracket {
 
-   private Stack<Character> stack ;
+    private Stack<Character> stack;
 
     public MultiBracket() {
-       this.stack = new Stack<>();
+        this.stack = new Stack<>();
     }
 
     boolean areBracketsBalanced(String str) throws Exception {
 
-        for (int i = 0; i < str.length(); i++)
-        {
+        for (int i = 0; i < str.length(); i++) {
             char current = str.charAt(i);
 
-            if (current == '(' || current == '[' || current == '{')
-            {
+            if (current == '(' || current == '[' || current == '{') {
                 this.stack.push(current);
                 continue;
             }
 
-           if (this.stack.isEmpty())
+            if (this.stack.isEmpty())
                 return false;
             char check;
             switch (current) {

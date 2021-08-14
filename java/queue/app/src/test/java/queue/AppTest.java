@@ -2,8 +2,7 @@ package queue;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test
@@ -176,5 +175,26 @@ class AppTest {
     public void testDequeueNull() throws Exception {
         AnimalShelter animalShelter=new AnimalShelter();
         assertEquals("Sorry We cant have a horse in the Shelter ",animalShelter.dequeue("horse"));
+    }
+
+
+    @Test
+    public void testMultiBracketValidationBasic() throws Exception {
+        MultiBracket multiBracketValidation  = new MultiBracket();
+        assertTrue(multiBracketValidation.areBracketsBalanced("()[]{}"));
+        assertTrue(multiBracketValidation.areBracketsBalanced("({}[]){}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("([]}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("([]{)}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("([]"));
+    }
+
+    @Test
+    public void testMultiBracketValidationWithOtherCharacters() throws Exception {
+        MultiBracket multiBracketValidation  = new MultiBracket();
+        assertTrue(multiBracketValidation.areBracketsBalanced("(ok)[yup]{fine}"));
+        assertTrue(multiBracketValidation.areBracketsBalanced("(ni{cool}[sure]ce){legit}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("(not[ok]ok}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("(what[are]{you)doing}"));
+        assertFalse(multiBracketValidation.areBracketsBalanced("(where[is]the end?"));
     }
 }

@@ -31,3 +31,17 @@ pseudoQueue.dequeue();
 ## Approach & Efficiency
 time o(1)
 space o(1)
+
+# Challenge Summary
+### Write a method named multiBracketValidation that, given a string, returns true or false if that string has balanced brackets ie: (){[]} returns true but ({[)]} returns false.
+## Whiteboard Process
+![codeChallenge11](./src/main/resources/multiBracket.jpg)
+
+
+## Approach & Efficiency
+time o(n)
+space o(n)
+
+## Solution
+"{([])}" -> { -> ( ->[ -> null => -> { -> ( -> null => -> { -> null => null = > t
+"([])}" ->  ( ->[ -> null => -> ( -> null => `}` = > f
