@@ -9,6 +9,7 @@ public class App {
         Dogs dog1=new Dogs("Rocky");
         Dogs dog2=new Dogs("MILO");
 
+        MultiBracket multiBracketValidation  = new MultiBracket();
 
 
         AnimalShelter animalShelter=new AnimalShelter();
@@ -16,7 +17,7 @@ public class App {
         animalShelter.enqueue(cat2);
         animalShelter.enqueue(dog1);
         animalShelter.enqueue(dog2);
-
+        System.out.println(animalShelter.toString());
         System.out.println("*******************************************");
         System.out.println(animalShelter.dequeue("rubberDuck"));
         System.out.println("*******************************************");
@@ -33,6 +34,9 @@ public class App {
         System.out.println(animalShelter.dequeue("dog"));
         System.out.println("*******************************************");
         System.out.println(animalShelter.dequeue("horse"));
+        System.out.println("*******************************************");
+        System.out.println("*******************************************");
 
+        System.out.println(multiBracketValidation.areBracketsBalanced("[{(({{}}))}]"));
     }
 }
