@@ -5,8 +5,8 @@ public class AnimalShelter<T> {
     Queue<T> cats;
 
     public AnimalShelter() {
-        dogs = new Queue<>();
-        cats = new Queue<>();
+        dogs = (Queue<T>) new Queue<Dogs>();
+        cats = (Queue<T>) new Queue<Cats>();
     }
 
     public void enqueue(T animal) throws Exception {
@@ -14,8 +14,10 @@ public class AnimalShelter<T> {
             if (animal instanceof Cats) {
                 cats.enqueue(animal);
 
-            } else {
+            } else if(animal instanceof Dogs){
                 dogs.enqueue(animal);
+            }else {
+                System.out.println("Sorry we don't have this type of animal in the Shelter ");
             }
         } catch (Exception e) {
             e.getMessage();
@@ -46,5 +48,11 @@ public class AnimalShelter<T> {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "AnimalShelter{" +
+                "dogs=" + dogs.front.value +
+                ", cats=" + cats.front.value +
+                '}';
+    }
 }

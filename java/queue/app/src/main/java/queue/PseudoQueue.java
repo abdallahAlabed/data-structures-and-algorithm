@@ -21,7 +21,6 @@ public class PseudoQueue <T> {
 
         T val = secondStack.pop();
 
-
         while (secondStack.top != null){
 
             firstStack.push(secondStack.pop());
