@@ -1,6 +1,6 @@
 package queue;
 
-public abstract class BinaryTree<T> {
+public  class BinaryTree<T> {
     public Node<T> root;
     int count = 1;
     int nextLevel = 1;
@@ -97,6 +97,24 @@ public abstract class BinaryTree<T> {
             System.out.print(" " + node.value);
             count++;
         }
+    }
+    public int findMaxVal(){
+        return findMax(this.root);
+    }
+    private int findMax(Node node)
+    {
+        if (node == null)
+            return Integer.MIN_VALUE;
+
+        int result =(int) node.value;
+        int lResult = findMax(node.left);
+        int rResult = findMax(node.right);
+
+        if (lResult > result)
+            result = lResult;
+        if (rResult > result)
+            result = rResult;
+        return result;
     }
 
     public Node<T> getRoot() {

@@ -20,6 +20,16 @@ public class App {
         bst1.add(44);
         bst1.add(94);
 
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(2);
+        tree.root.left = new Node(33);
+        tree.root.right = new Node(23);
+        tree.root.left.right = new Node(9);
+        tree.root.left.right.left = new Node(2);
+        tree.root.left.right.right = new Node(13);
+        tree.root.right.right = new Node(9);
+        tree.root.right.right.left = new Node(0);
+        System.out.println(tree.findMaxVal());
 //        bst2.inOrder();
 //        bst2.preOrder();
 //        bst2.postOrder();
