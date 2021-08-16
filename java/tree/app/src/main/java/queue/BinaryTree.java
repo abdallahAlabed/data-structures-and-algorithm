@@ -1,6 +1,6 @@
 package queue;
 
-public  class BinaryTree<T> {
+public class BinaryTree<T> {
     public Node<T> root;
     int count = 1;
     int nextLevel = 1;
@@ -13,6 +13,13 @@ public  class BinaryTree<T> {
     public BinaryTree(Node<T> root) {
 
         this.root = root;
+    }
+
+    public void setRoot(Node<T> root) {
+        this.root = root;
+    }
+    public Node<T> getRoot() {
+        return root;
     }
 
     public void inOrder() {
@@ -98,15 +105,16 @@ public  class BinaryTree<T> {
             count++;
         }
     }
-    public int findMaxVal(){
+
+    public int findMaxVal() {
         return findMax(this.root);
     }
-    private int findMax(Node node)
-    {
+
+    private int findMax(Node node) {
         if (node == null)
             return Integer.MIN_VALUE;
 
-        int result =(int) node.value;
+        int result = (int) node.value;
         int lResult = findMax(node.left);
         int rResult = findMax(node.right);
 
@@ -117,16 +125,5 @@ public  class BinaryTree<T> {
         return result;
     }
 
-    public Node<T> getRoot() {
-        return root;
-    }
-
-    public void setRoot(Node<T> root) {
-        this.root = root;
-    }
-
-
-    public void traverseInOrder() {
-    }
 }
 

@@ -2,6 +2,10 @@ package queue;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -158,5 +162,23 @@ class AppTest {
         tree.root.right.right.left = new Node(2);
 //        "Should hopefully give back 2"
         assertEquals( 2, tree.findMaxVal());
+    }
+
+    @Test void testBreadthFirst() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        tree.add(3);
+        tree.add(9);
+        tree.add(4);
+        tree.add(4);
+        List list = Arrays.asList(5,3,9,4);
+        assertEquals(list,tree.breadthFirst());
+    }
+
+    @Test void testBreadthFirst1() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+
+        List list = new ArrayList();
+        assertEquals(list,tree.breadthFirst());
     }
 }
