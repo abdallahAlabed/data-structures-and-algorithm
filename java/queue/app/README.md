@@ -26,7 +26,7 @@ pseudoQueue.dequeue();
 ### Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach. The shelter should have an enqueue(animal) method that will add either a cat or dog object to the shelter.
 
 ## Whiteboard Process
-![codeChallenge12]()
+![codeChallenge12](./src/main/resources/fifo_animal_shelter_edit_471582096133250.jpg)
 
 ## Approach & Efficiency
 time o(1)
