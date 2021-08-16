@@ -29,7 +29,9 @@ public class App {
         tree.root.left.right.right = new Node(13);
         tree.root.right.right = new Node(9);
         tree.root.right.right.left = new Node(0);
-        System.out.println(tree.findMaxVal());
+//        System.out.println(tree.findMaxVal());
+        System.out.println(bst1.breadthFirst());
+
 //        bst2.inOrder();
 //        bst2.preOrder();
 //        bst2.postOrder();

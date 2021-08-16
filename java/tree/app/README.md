@@ -38,4 +38,39 @@
 ### time o(n)
 ### space o(1)
 
+# Challenge Summary
+### Within the BinaryTree class, create a method that takes in a tree, and prints out the values of it Nodes via a breadth first traversal.
+
+## Whiteboard Process
+![codeChallenge12](./src/main/resources/IMG_20210816_222007.png)
+
+## Approach & Efficiency
+### O(n) for both time and space.
+## Solution
+``` 
+       a
+     b    c
+    d e  f g
+
+       Queue = a
+       Queue = b -> c
+       Queue = c -> d -> e
+       Queue = d -> e -> f -> g
+       Queue =  e -> f -> g
+       Queue =  f -> g
+       Queue =   g
+       Queue =   null
+       
+       list  = a 
+       list  = a b
+       list  = a b c 
+       list  = a b c d
+       list  = a b c d e
+       list  = a b c d e f
+       list  = a b c d e f g
+       
+```
+
+
+        
 
