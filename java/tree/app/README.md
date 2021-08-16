@@ -12,7 +12,7 @@
 ### The preOrder, inOrder, and postOrder methods all traverse the tree recursively, meaning they each take O(n) time they also take O(n) space. The add and search methods for the BinarySearchTree should both take O(log n) time and O(1) space.
 
 ## API
-##   ما عدلت الكودوخليته يطبع بدل ما يعبي ب array list
+## array list
 ### preOrder
 #### * Takes in a root node, and returns the all nodes in the tree as an ArrayList ordered by root, left, right.
 
@@ -27,3 +27,15 @@
 
 ### search
 #### * Takes in a value and returns the node that contains that value, or null if no node contains that value.
+
+# Challenge Summary
+## Within the BinaryTree class, write a method that takes in a tree and returns the highest value stored in the tree. Assume that all the nodes contain integer values.
+
+## Whiteboard Process
+![codeChallenge12](./src/main/resources/IMG_20210816_193616.png)
+
+## Approach & Efficiency
+### time o(n)
+### space o(1)
+
+
