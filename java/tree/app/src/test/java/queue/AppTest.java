@@ -109,4 +109,54 @@ class AppTest {
         bst2.postOrder();
         bst1.postOrder();
     }
+    @Test
+    public void testFindMaximumValue() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(2);
+        tree.root.left = new Node(33);
+        tree.root.right = new Node(23);
+        tree.root.left.right = new Node(9);
+        tree.root.left.right.left = new Node(2);
+        tree.root.left.right.right = new Node(13);
+        tree.root.right.right = new Node(9);
+        tree.root.right.right.left = new Node(0);
+//        "Should give back 33 as the result"
+        assertEquals(33, tree.findMaxVal());
+    }
+
+    @Test
+    public void testFindMaximumValueEmptyTree() {
+        BinaryTree tree = new BinaryTree();
+//        "Should give back 0 in the case of a tree with no Nodes"
+        assertEquals( -2147483648, tree.findMaxVal());
+    }
+
+    @Test
+    public void testFindMaximumValueAllNodesLeft() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.left.left = new Node(3);
+        tree.root.left.left.left = new Node(4);
+        tree.root.left.left.left.left = new Node(4);
+        tree.root.left.left.left.left.left = new Node(5);
+        tree.root.left.left.left.left.left.left = new Node(6);
+        tree.root.left.left.left.left.left.left.left = new Node(7);
+        assertEquals( 7,tree.findMaxVal());
+    }
+
+    @Test
+    public void testFindMaximumValueAllSameValue() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(2);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(2);
+        tree.root.left.right = new Node(2);
+        tree.root.left.right.left = new Node(2);
+        tree.root.left.right.right = new Node(2);
+        tree.root.right.right = new Node(2);
+        tree.root.right.right.left = new Node(2);
+//        "Should hopefully give back 2"
+        assertEquals( 2, tree.findMaxVal());
+    }
 }
