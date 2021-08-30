@@ -27,7 +27,7 @@ public class App {
         root.children[0].children[0] = new KarrayTreeNode(n, 5);
         root.children[0].children[1] = new KarrayTreeNode(n, 6);
         root.children[0].children[2] = new KarrayTreeNode(n, 7);
-//        KarrayTreeNode.inorder(root);
+//      KarrayTreeNode.inorder(root);
         System.out.println(KarrayTreeNode.FizzBuzz(kTree));
         System.out.println(KarrayTreeNode.FizzBuzz(root));
     }
