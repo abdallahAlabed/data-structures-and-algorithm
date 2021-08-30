@@ -11,6 +11,12 @@ public class KarrayTreeNode {
         this.value = value;
     }
 
+//                     1
+//                  /  |  \
+//                 2   3   4
+//                /  / | \
+//               6  5  6  7
+
     static void inorder(KarrayTreeNode node) {
         if (node == null)
             return;
@@ -21,7 +27,9 @@ public class KarrayTreeNode {
         inorder(node.children[siz - 1]);
     }
 
-     static List<String> list = new ArrayList<>();
+
+      static List<String> list = new ArrayList<>();
+
     public static List<String> FizzBuzz(KarrayTreeNode node) {
         if (node == null) {
             return list;
@@ -30,7 +38,6 @@ public class KarrayTreeNode {
         for (int i = 0; i < siz - 1; i++){
             FizzBuzz(node.children[i]);
         }
-
         if (node.value % 3 == 0 && node.value % 5 == 0){
             list.add("FizzBuzz");
         }else if (node.value % 3 == 0){
