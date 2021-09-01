@@ -4,11 +4,11 @@
 package QuickSort;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        int[] arr = { 5, 12, 8, 9, 1, 10 ,1};
+        QuickSort.sort(arr);
+        QuickSort.printArray(arr);
     }
 }
