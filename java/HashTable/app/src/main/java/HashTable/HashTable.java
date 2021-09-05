@@ -7,6 +7,8 @@
   private int hash(K key) {
   
   }
+thing'
+
 
   }
   
