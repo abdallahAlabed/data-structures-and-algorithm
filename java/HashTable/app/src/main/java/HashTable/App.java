@@ -4,11 +4,16 @@
 package HashTable;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        HashTable hashTable = new HashTable();
+//        hashTable.add("key", "val");
+//        System.out.println(hashTable.get("key"));
+//        System.out.println(hashTable.contains("key"));
+          System.out.println(hashTable.repeatedWord("Once upon a time, there was a brave princess who..."));
+          System.out.println(hashTable);
+
+
     }
 }
