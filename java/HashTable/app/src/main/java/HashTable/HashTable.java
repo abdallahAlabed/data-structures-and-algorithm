@@ -11,6 +11,7 @@ public class HashTable<S, T> {
         int sum = 0;
         char[] charArr = key.toString().toCharArray();
         for (int oneChar : charArr) {
+//            System.out.println(oneChar);
             sum += oneChar;
         }
         return sum % hashTable.length;
@@ -18,16 +19,16 @@ public class HashTable<S, T> {
 
     public void add(S key, T data) {
         int index = hash(key);
+        hashTable[index].add((S)key,(T)data);
+//        Node<S, T> nodeToAdd = new Node<S, T>((S)key, data);
 
-        Node<S, T> nodeToAdd = new Node<S, T>((String) key, data);
 
-
-        if (hashTable[index] != null) {
-            nodeToAdd.next = hashTable[index].head;
-        } else {
-            hashTable[index] = new LinkedList();
-            hashTable[index].head = nodeToAdd;
-        }
+//        if (hashTable[index] != null) {
+//            nodeToAdd.next = hashTable[index].head;
+//        } else {
+//            hashTable[index] = new LinkedList();
+//            hashTable[index].head = nodeToAdd;
+//        }
     }
 
     public T get(S key) {

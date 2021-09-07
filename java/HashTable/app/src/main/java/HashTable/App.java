@@ -6,9 +6,15 @@ package HashTable;
 public class App {
 
     public static void main(String[] args) {
-
+        HashmapTreeIntersection hashmapTreeIntersection= new HashmapTreeIntersection();
+//        hashmapTreeIntersection.add(1,"s");
+//        hashmapTreeIntersection.add(2,"s");
+//        hashmapTreeIntersection.add(3,"s");
+//        hashmapTreeIntersection.contains("s");
         HashTable hashTable = new HashTable();
-        hashTable.add("Once", "Once");
+//        hashTable.add("Once", "Once");
+//        hashTable.add("Once", "Once");
+//        System.out.println(hashTable.contains("Once"));
 //        System.out.println(hashTable.get("key"));
 //        System.out.println(hashTable.contains("key"));
           System.out.println(hashTable.repeatedWord("Once upon a time, there was a brave princess who..."));
