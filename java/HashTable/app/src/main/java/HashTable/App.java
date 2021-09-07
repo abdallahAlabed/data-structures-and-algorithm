@@ -17,7 +17,7 @@ public class App {
 //        System.out.println(hashTable.contains("Once"));
 //        System.out.println(hashTable.get("key"));
 //        System.out.println(hashTable.contains("key"));
-          System.out.println(hashTable.repeatedWord("Once upon a time, there was a brave princess who..."));
+          hashTable.repeatedWord("Once upon a time, there was a brave princess who...");
           System.out.println(hashTable);
 
 
