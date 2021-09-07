@@ -1,14 +1,14 @@
 package HashTable;
 
 
-public class LinkedList<String,T> {
+public class LinkedList<s,T> {
 
-    Node<String,T> head;
+    Node<s,T> head;
 
-    public java.lang.String toString(){
-        java.lang.String result = " [ ";
+    public String toString(){
+        String result = " [ ";
 
-        Node<String,T> current = head;
+        Node<s,T> current = head;
 
         while (current != null) {
             result  += "{"+ current.key+ ":" + current.data + "} ";

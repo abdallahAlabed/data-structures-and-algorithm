@@ -1,6 +1,6 @@
 package HashTable;
 
-public class Node<String,T> {
+public class Node<S,T> {
     public String key;
     public T data;
     public Node next;

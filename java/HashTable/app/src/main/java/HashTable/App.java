@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         HashTable hashTable = new HashTable();
-//        hashTable.add("key", "val");
+        hashTable.add("Once", "Once");
 //        System.out.println(hashTable.get("key"));
 //        System.out.println(hashTable.contains("key"));
           System.out.println(hashTable.repeatedWord("Once upon a time, there was a brave princess who..."));
