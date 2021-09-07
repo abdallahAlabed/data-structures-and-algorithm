@@ -1,20 +1,32 @@
 package HashTable;
 
 
-public class LinkedList<String,T> {
+public class LinkedList<S, T> {
 
-    Node<String,T> head;
+    Node<S, T> head;
+    Node<S, T> tail;
 
-    public java.lang.String toString(){
-        java.lang.String result = " [ ";
+    public String toString() {
+        String result = " [ ";
 
-        Node<String,T> current = head;
+        Node<S, T> current = head;
 
         while (current != null) {
-            result  += "{"+ current.key+ ":" + current.data + "} ";
+            result += "{" + current.key + ":" + current.data + "} ";
             current = current.next;
         }
 
         return result + "] ";
+    }
+
+
+    public void add(S kye,T data) {
+        if (head == null){
+            head= new  Node<S, T>(kye, data);
+            tail =head;
+        }else {
+            tail.next=new  Node<S, T>(kye, data);
+            tail=tail.next;
+        }
     }
 }

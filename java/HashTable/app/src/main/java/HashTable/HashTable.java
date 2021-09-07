@@ -3,11 +3,11 @@ package HashTable;
 import java.util.Arrays;
 
 
-public class HashTable<String, T> {
+public class HashTable<S, T> {
 
     public LinkedList[] hashTable = new LinkedList[10];
 
-    public int hash(String key) {
+    public int hash(S key) {
         int sum = 0;
         char[] charArr = key.toString().toCharArray();
         for (int oneChar : charArr) {
@@ -17,21 +17,21 @@ public class HashTable<String, T> {
         return sum % hashTable.length;
     }
 
-    public void add(String key, T data) {
+    public void add(S key, T data) {
         int index = hash(key);
+        hashTable[index].add((S)key,(T)data);
+//        Node<S, T> nodeToAdd = new Node<S, T>((S)key, data);
 
-        Node<String, T> nodeToAdd = new Node<String, T>(key, data);
 
-        if (hashTable[index] != null) {
-            nodeToAdd.next = hashTable[index].head;
-        } else {
-            hashTable[index] = new LinkedList();
-            hashTable[index].head = nodeToAdd;
-        }
-
+//        if (hashTable[index] != null) {
+//            nodeToAdd.next = hashTable[index].head;
+//        } else {
+//            hashTable[index] = new LinkedList();
+//            hashTable[index].head = nodeToAdd;
+//        }
     }
 
-    public T get(String key) {
+    public T get(S key) {
         int index = hash(key);
 
         if (hashTable[index] == null) {
@@ -39,7 +39,7 @@ public class HashTable<String, T> {
         } else if (key == hashTable[index].head.key) {
             return (T) hashTable[index].head.data;
         } else {
-            Node<String, T> current = hashTable[index].head;
+            Node<S, T> current = hashTable[index].head;
             while (current != null) {
                 if (key == current.key)
                     return current.data;
@@ -49,7 +49,7 @@ public class HashTable<String, T> {
         }
     }
 
-    public boolean contains(String key) {
+    public boolean contains(S key) {
         int index = hash(key);
 
         if (hashTable[index] == null) {
@@ -57,7 +57,7 @@ public class HashTable<String, T> {
         } else if (key == hashTable[index].head.key) {
             return true;
         } else {
-            Node<String, T> current = hashTable[index].head;
+            Node<S, T> current = hashTable[index].head;
             while (current != null) {
                 if (key == current.key)
                     return true;
@@ -68,32 +68,30 @@ public class HashTable<String, T> {
 
     }
 
-    public String printOneBucket(String key) {
+    public S printOneBucket(S key) {
         int index = hash(key);
 
         if (hashTable[index] == null) {
             return null;
         } else
-            return (String) hashTable[index].toString();
+            return (S) hashTable[index].toString();
     }
 
-    public java.lang.String repeatedWord(java.lang.String str) {
-        str = str.toLowerCase();
-        str = str.replace(",", "");
-        java.lang.String[] str1 = str.split(" ");
+    public String repeatedWord(String str) {
 
-        for (java.lang.String word : str1) {
-            word = word;
+        String[] str1 = str.toLowerCase().replace(",", "").split(" ");
+
+        for (String word : str1) {
 //            System.out.println(word);
 //            System.out.println(this);
 //            System.out.println(hash((String)word));
-//            System.out.println(this.contains((String) word));
-            if (this.contains((String) word)) {
-                System.out.println(this.contains((String) word));
+            System.out.println(this.contains((S)word));
+            if (this.contains((S) word)) {
+                System.out.println(this.contains((S) word));
                 return word;
-            } else{
+            } else {
                 System.out.println(this);
-                this.add((String) word, (T) word);
+                this.add((S) word, (T) word);
             }
 
 
@@ -102,7 +100,7 @@ public class HashTable<String, T> {
     }
 
     @Override
-    public java.lang.String toString() {
+    public String toString() {
         return "HashTable{" +
                 "hashTable=" + Arrays.toString(hashTable) +
                 '}';

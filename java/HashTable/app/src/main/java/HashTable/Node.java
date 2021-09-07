@@ -1,12 +1,12 @@
 package HashTable;
 
-public class Node<String,T> {
-    public String key;
+public class Node<S,T> {
+    public S key;
     public T data;
     public Node next;
 
-    public Node(String key, T value) {
+    public Node(S key, T data) {
         this.key = key;
-        this.data = value;
+        this.data = data;
     }
 }
