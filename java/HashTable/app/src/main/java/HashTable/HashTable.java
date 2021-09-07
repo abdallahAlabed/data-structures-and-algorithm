@@ -19,16 +19,14 @@ public class HashTable<S, T> {
 
     public void add(S key, T data) {
         int index = hash(key);
-        hashTable[index].add((S)key,(T)data);
-//        Node<S, T> nodeToAdd = new Node<S, T>((S)key, data);
-
-
-//        if (hashTable[index] != null) {
-//            nodeToAdd.next = hashTable[index].head;
-//        } else {
-//            hashTable[index] = new LinkedList();
-//            hashTable[index].head = nodeToAdd;
-//        }
+//        hashTable[index].addLinkedlist((S)key,(T)data);
+        Node<S, T> nodeToAdd = new Node<S, T>((S)key, data);
+        if (hashTable[index] != null) {
+            hashTable[index].head.next= nodeToAdd;
+        } else {
+            hashTable[index] = new LinkedList();
+            hashTable[index].head = nodeToAdd;
+        }
     }
 
     public T get(S key) {
@@ -41,7 +39,7 @@ public class HashTable<S, T> {
         } else {
             Node<S, T> current = hashTable[index].head;
             while (current != null) {
-                if (key == current.key)
+                if (key.equals(current.key))
                     return current.data;
                 current = current.next;
             }
@@ -54,12 +52,14 @@ public class HashTable<S, T> {
 
         if (hashTable[index] == null) {
             return false;
-        } else if (key == hashTable[index].head.key) {
+        } else if (key.equals(hashTable[index].head.key) ) {
             return true;
         } else {
             Node<S, T> current = hashTable[index].head;
             while (current != null) {
-                if (key == current.key)
+                System.out.println(current.key);
+                System.out.println(key);
+                if (key.equals(current.key) )
                     return true;
                 current = current.next;
             }
@@ -80,21 +80,18 @@ public class HashTable<S, T> {
     public String repeatedWord(String str) {
 
         String[] str1 = str.toLowerCase().replace(",", "").split(" ");
-
         for (String word : str1) {
 //            System.out.println(word);
 //            System.out.println(this);
 //            System.out.println(hash((String)word));
-            System.out.println(this.contains((S)word));
+//            System.out.println(this.contains((S)word));
             if (this.contains((S) word)) {
-                System.out.println(this.contains((S) word));
+//                System.out.println(this.contains((S) word));
                 return word;
             } else {
-                System.out.println(this);
+//                System.out.println(this);
                 this.add((S) word, (T) word);
             }
-
-
         }
         return "";
     }

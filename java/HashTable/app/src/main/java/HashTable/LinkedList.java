@@ -20,7 +20,7 @@ public class LinkedList<S, T> {
     }
 
 
-    public void add(S kye,T data) {
+    public void addLinkedlist(S kye,T data) {
         if (head == null){
             head= new  Node<S, T>(kye, data);
             tail =head;
