@@ -1,5 +1,6 @@
 package HashTable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -81,21 +82,31 @@ public class HashTable<S, T> {
 
         String[] str1 = str.toLowerCase().replace(",", "").split(" ");
         for (String word : str1) {
-//            System.out.println(word);
-//            System.out.println(this);
-//            System.out.println(hash((String)word));
-//            System.out.println(this.contains((S)word));
             if (this.contains((S) word)) {
-//                System.out.println(this.contains((S) word));
                 return word;
             } else {
-//                System.out.println(this);
                 this.add((S) word, (T) word);
             }
         }
         return "";
     }
+    public ArrayList treeIntersection(BinaryTree tree1, BinaryTree tree2) {
 
+        if (tree1.root == null || tree2.root == null)
+            return null;
+        ArrayList<Object> arr = new ArrayList<>();
+
+        for (Object oneItem : tree1.preOrder(tree1.root)) {
+            this.add((S)oneItem.toString(), null);
+        }
+
+        for (Object oneItem: tree2.preOrder(tree2.root)) {
+            if (this.contains((S)oneItem.toString()) && !arr.contains(oneItem)) arr.add(oneItem);
+        }
+
+        return arr;
+    }
+    
     @Override
     public String toString() {
         return "HashTable{" +
