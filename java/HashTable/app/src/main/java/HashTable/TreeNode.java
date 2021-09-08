@@ -1,21 +1,22 @@
 package HashTable;
 
-public class TreeNode<S, T> {
-    public S key;
+public class TreeNode< T> {
     public T data;
     public TreeNode left;
     public TreeNode right;
 
 
-    public TreeNode(S key, T data, TreeNode left, TreeNode right) {
-        this.key = key;
+    public TreeNode( T data, TreeNode left, TreeNode right) {
         this.data = data;
         this.left = left;
         this.right = right;
     }
 
-    public TreeNode(S key, T data) {
-        this.key = key;
+    public TreeNode( T data) {
+
         this.data = data;
+    }
+
+    public TreeNode() {
     }
 }
