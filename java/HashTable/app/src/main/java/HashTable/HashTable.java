@@ -24,9 +24,12 @@ public class HashTable<S, T> {
         Node<S, T> nodeToAdd = new Node<S, T>((S)key, data);
         if (hashTable[index] != null) {
             hashTable[index].head.next= nodeToAdd;
+            hashTable[index].tail= nodeToAdd;
         } else {
             hashTable[index] = new LinkedList();
             hashTable[index].head = nodeToAdd;
+            hashTable[index].tail = nodeToAdd;
+
         }
     }
 
@@ -66,7 +69,6 @@ public class HashTable<S, T> {
             }
             return false;
         }
-
     }
 
     public S printOneBucket(S key) {
@@ -106,7 +108,19 @@ public class HashTable<S, T> {
 
         return arr;
     }
-    
+    public ArrayList  leftJoin(HashTable one ,HashTable two){
+        ArrayList finalResult = new ArrayList<>();
+        for(int x=0; x<10; x++){
+            if ((S)one.hashTable[x] != null && two.contains((S)one.hashTable[x].head.key)){
+                one.hashTable[x].tail.next = two.hashTable[x].head;
+                finalResult.add((S)one.hashTable[x]);
+            }
+            else{
+                finalResult.add((S)one.hashTable[x]);
+            }
+        }
+        return finalResult;
+    }
     @Override
     public String toString() {
         return "HashTable{" +
