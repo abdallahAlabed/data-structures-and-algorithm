@@ -44,6 +44,6 @@ public class App {
 
 //        System.out.println(hashTable.therereeIntersection(binaryTreeOne, binaryTreeTwo));
 //        hashTable.leftJoin(hashTable,hashTable);
-        System.out.println(hashTable.leftJoin(hashTable,hashTableTwo).toString());
+        System.out.println("IT WORKS!!");
     }
 }
