@@ -11,6 +11,12 @@ public class Graph {
         Node node = new Node(value);
         allNodes.add(node);
     }
+    public List getNeighbors(int index) {
+        return allNodes.get(index).neighbors;
+    }
+    public List getNodes() {
+        return allNodes;
+    }
     public void addEdge(int i,int j) {
         allNodes.get(i).neighbors.add(allNodes.get(j));
 //        to.neighbors.add(this);
