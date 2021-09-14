@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Node{
 
-    int value;
+    public int value;
     List<Node> neighbors;
 
     public Node(int value) {
@@ -26,4 +26,5 @@ public class Node{
 //
 //        return count;
 //    }
+
 }

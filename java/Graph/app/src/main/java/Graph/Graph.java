@@ -5,17 +5,17 @@ import java.util.*;
 
 public class Graph {
     List list = new ArrayList();
-    List<Node> allNodes = new ArrayList<Node>();
+    public List<Node> allNodes = new ArrayList<Node>();
 
     public void addNode(int value) {
         Node node = new Node(value);
         allNodes.add(node);
     }
     public List getNeighbors(int index) {
-        return allNodes.get(index).neighbors;
+        return this.allNodes.get(index).neighbors;
     }
     public List getNodes() {
-        return allNodes;
+        return this.allNodes;
     }
     public void addEdge(int i,int j) {
         allNodes.get(i).neighbors.add(allNodes.get(j));
