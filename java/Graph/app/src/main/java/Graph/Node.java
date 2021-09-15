@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Node{
 
-    public int value;
+    public int[][] cost;
+    public String value;
     List<Node> neighbors;
 
-    public Node(int value) {
+    public Node(String value) {
+        this.cost= new int[][]{};
         this.value = value;
         neighbors = new ArrayList<>();
 
