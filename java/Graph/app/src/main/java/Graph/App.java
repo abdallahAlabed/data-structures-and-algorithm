@@ -10,23 +10,23 @@ public class App <T>{
 
     public static void main(String[] args) {
         Graph graph =new Graph();
-        graph.addNode(0);
-        graph.addNode(1);
-        graph.addNode(2);
-        graph.addNode(3);
-        graph.addNode(4);
-        graph.addNode(5);
+        graph.addNode("a");
+        graph.addNode("b");
+        graph.addNode("c");
+        graph.addNode("d");
+        graph.addNode("e");
+        graph.addNode("f");
 
-        graph.addEdge(0,1);
-        graph.addEdge(1,0);
-        graph.addEdge(1,3);
-        graph.addEdge(1,2);
-        graph.addEdge(2,1);
-        graph.addEdge(2,4);
-        graph.addEdge(3,5);
-        graph.addEdge(4,2);
-        graph.addEdge(4,3);
-        graph.addEdge(5,3);
+        graph.addEdge(1,0,0);
+        graph.addEdge(0,1,1);
+        graph.addEdge(1,3,2);
+        graph.addEdge(1,2,3);
+        graph.addEdge(2,1,4);
+        graph.addEdge(2,4,5);
+        graph.addEdge(3,5,6);
+        graph.addEdge(4,2,7);
+        graph.addEdge(4,3,8);
+        graph.addEdge(5,3,9);
 //        Node n0 = new Node(0);
 //        Node n1 = new Node(1);
 //        Node n2 = new Node(2);
@@ -52,12 +52,12 @@ public class App <T>{
         System.out.println(graph.dfsIterative(graph.allNodes.get(0)).toString());
         System.out.println();
         System.out.println("DFS Recursive:");
-        System.out.println(graph.dfsRecursive(graph.allNodes.get(0), new HashSet<Integer>()).toString());
+        System.out.println(graph.dfsRecursive(graph.allNodes.get(0), new HashSet<String>()).toString());
         System.out.println();
         System.out.println("siz");
         System.out.println(graph.siz());
         System.out.println(graph.getNeighbors(1));
-        System.out.println(graph.getNodes());
+        System.out.println(graph.getNodes().get(1).value);
 
     }
 
